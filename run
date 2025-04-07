@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+
+script_dir=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
+
+filter=""
+dry="0"
+
+# Correcting the while loop and condition checks
+while [[ $# -gt 0 ]]; do
+    if [[ "$1" == "--dry" ]]; then
+        dry="1"
+    else 
+        filter="$1"
+    fi
+    shift
+done
+
+log() {
+    if [[ $dry == "1" ]]; then
+        echo "[DRY_RUN]: $@"
+    else 
+        echo "$@"
+    fi
+}
+
+execute() {
+    log "execute $@"
+    if [[ $dry == "1" ]]; then
+        return
+    fi
+    "$@"
+}
+
+# Show the current script directory and the filter (if any)
+echo "$script_dir -- $filter"
+
+# Move to the script's directory
+cd $script_dir
+
+# Find all executable files in the "runs" directory
+scripts=$(find ./runs_MacOS -maxdepth 1 -mindepth 1 -type f -perm +111)
+
+# Iterate over the found scripts
+for script in $scripts; do
+    # If the script doesn't match the filter, skip it
+    if echo "$script" | grep -qv "$filter"; then
+        log "filtering $script"
+        continue
+    fi
+
+    # Execute the matching script
+    execute ./$script
+done
