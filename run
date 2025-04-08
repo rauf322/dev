@@ -2,11 +2,11 @@
 
 script_dir=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 
-filter=""
+filter="" #find matching scripts
 dry="0"
 
-# Correcting the while loop and condition checks
-while [[ $# -gt 0 ]]; do
+# Put values from our input to filter and dry variables
+while [[ $# > 0 ]]; do
     if [[ "$1" == "--dry" ]]; then
         dry="1"
     else 
