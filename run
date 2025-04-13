@@ -4,7 +4,7 @@ script_dir=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 
 filter="" #find matching scripts
 dry="0"
-
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 # Put values from our input to filter and dry variables
 while [[ $# > 0 ]]; do
     if [[ "$1" == "--dry" ]]; then
