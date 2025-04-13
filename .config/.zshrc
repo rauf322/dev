@@ -3,7 +3,7 @@ ZSH_THEME="robbyrussell"
 
 source $ZSH/oh-my-zsh.sh
 source <(fzf --zsh)
-
+echo -ne '\e[2 q'
 # Reset PATH to prevent duplication issues
 export PATH=""
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -80,6 +80,7 @@ alias pull="git pull"
 alias stat="git status"
 alias push="git push"
 alias python="python3"
-
-
+# ls for . file alias
 alias ls.="ls -a"
+#Vim to Nvim alias
+alias vim="nvim"
