@@ -1,11 +1,10 @@
-font-family = GeistMono Nerd Font
-confirm-close-surface = false
+font-family = GeistMono
 font-size = 20
 background-blur-radius = 20
 window-decoration = true
 shell-integration-features = no-cursor,no-sudo,title
 cursor-style = bar
-theme= vesper
+theme= catppuccin-mocha
 adjust-cell-height = 35%
 # background-opacity = 0.96
 
