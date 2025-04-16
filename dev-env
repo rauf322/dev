@@ -89,11 +89,11 @@ elif [[ $choice == "copy:root:local" ]]; then
     copy_dir $HOME/.local .local 
 elif [[ $choice == "info" ]]; then 
     log "You have multiple options:"
-    log "  --copy:root:config copy from XDG_CONFIG_HOME to .config"
-    log "  --copy:dir:config copy from .config to XDG_CONFIG_HOME"
-    log "  --copy:dir:local copy from .local to $HOME/.local"
-    log "  --copy:root:local copy from $HOME/.local to .local"
-    log "  --dry run"
-    log "  --info show this message"
+    log "--dry run"
+    log "--copy:root:config copy from XDG_CONFIG_HOME to .config"
+    log "--copy:dir:config copy from .config to XDG_CONFIG_HOME"
+    log "--copy:root:local copy from $HOME/.local to .local"
+    log "--copy:dir:local copy from .local to $HOME/.local"
+    log "--info show this message"
 fi
 
