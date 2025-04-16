@@ -15,7 +15,6 @@ vim.opt.timeoutlen = 500
 -- Save undo history
 vim.opt.undofile = true
 
-vim.opt.clipboard = "unnamedplus"
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true
@@ -37,6 +36,6 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "120"
 
 vim.g.mapleader = " "
