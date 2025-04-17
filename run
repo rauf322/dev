@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 
-script_dir=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# Replace any repeated slashes
+script_dir="${script_dir//\/\//\/}"
+# Remove trailing slash if there is one (optional)
+script_dir="${script_dir%/}"
 
 filter="" #find matching scripts
 dry="0"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+#/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 # Put values from our input to filter and dry variables
 while [[ $# > 0 ]]; do
     if [[ "$1" == "--dry" ]]; then
@@ -38,7 +42,7 @@ echo "$script_dir -- $filter"
 cd $script_dir
 
 # Find all executable files in the "runs" directory
-scripts=$(find ./runs_MacOS -maxdepth 1 -mindepth 1 -type f -perm +111)
+scripts=$(find ./runs_MacOS -maxdepth 1 -mindepth 1 -type f -perm -111 | sed 's|^\./\./|./|;s|//|/|g')
 
 # Iterate over the found scripts
 for script in $scripts; do
