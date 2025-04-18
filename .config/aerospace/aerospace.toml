@@ -23,9 +23,11 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 on-focus-changed = "move-mouse window-lazy-center"
 
 [gaps]
+inner.vertical  = 20
+inner.horizontal = 20
 outer.left =       20
 outer.bottom =     20
-outer.top =        40
+outer.top =        45
 outer.right =      20
 
 [mode.main.binding]
@@ -81,16 +83,9 @@ alt-shift-l = ['join-with right', 'mode main']
 
 
 
-[[on-window-detected]]
-if.app-name-regex-substring = 'telegram'
-run = 'layout floating'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'finder'
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-name-regex-substring = 'safari'
 run = 'layout floating'
  
 [[on-window-detected]]
@@ -101,17 +96,6 @@ run = 'layout floating'
 if.app-name-regex-substring = 'elgato'
 run = 'layout floating'
 
-[[on-window-detected]]
-if.app-name-regex-substring = 'dicord'
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-name-regex-substring = 'mail'
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-name-regex-substring = 'trello'
-run = 'layout floating'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'quicktime'
@@ -121,6 +105,3 @@ run = 'layout floating'
 if.app-name-regex-substring = 'IINA'
 run = 'layout floating'
 
-[[on-window-detected]]
-if.app-name-regex-substring = 'discord'
-run = 'layout floating'

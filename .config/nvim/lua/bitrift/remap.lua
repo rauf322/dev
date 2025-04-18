@@ -10,7 +10,6 @@ vim.keymap.set({ "n", "v" }, "<leader>d", '"_d')
 vim.keymap.set("i", "jj", "<Esc>")
 vim.keymap.set("i", "kk", "<Esc>")
 vim.keymap.set("i", "hh", "<Esc>")
-vim.keymap.set("i", "ll", "<Esc>")
 -- split right (vertical)
 vim.keymap.set("n", "<leader>|", ":vsplit<CR>", { desc = "Vertical Split" })
 
