@@ -10,6 +10,7 @@ vim.keymap.set({ "n", "v" }, "<leader>d", '"_d')
 vim.keymap.set("i", "jj", "<Esc>")
 vim.keymap.set("i", "kk", "<Esc>")
 vim.keymap.set("i", "hh", "<Esc>")
+
 -- split right (vertical)
 vim.keymap.set("n", "<leader>|", ":vsplit<CR>", { desc = "Vertical Split" })
 
@@ -27,5 +28,12 @@ vim.keymap.set("n", "<leader>h", "<C-w>h", { desc = "Focus Left" })
 vim.keymap.set("n", "<leader>l", "<C-w>l", { desc = "Focus Right" })
 vim.keymap.set("n", "<leader>j", "<C-w>j", { desc = "Focus Down" })
 vim.keymap.set("n", "<leader>k", "<C-w>k", { desc = "Focus Up" })
+
 -- TODO Diagnostic Keymap
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+
+-- Blank line below, stay in normal mode
+vim.keymap.set('n', '<leader>o', ":put =''<CR>", { desc = 'Blank line below (normal mode)' })
+
+-- Blank line above, stay in normal mode
+vim.keymap.set('n', '<leader>O', ":put! =''<CR>", { desc = 'Blank line above (normal mode)' })
