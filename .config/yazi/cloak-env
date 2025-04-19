@@ -1,0 +1,12 @@
+#!/bin/bash
+# ~/.config/yazi/previews/cloak-env.sh
+
+file="$1"
+
+# Only run for .env files
+if [[ "$(basename "$file")" == .env* ]]; then
+    sed -E 's/(^.*=).*/\1••••••••/' "$file"
+else
+    cat "$file"
+fi
+
